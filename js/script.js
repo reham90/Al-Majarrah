@@ -174,38 +174,44 @@ $(window).scroll(function() {
   });
 
     ///////// **projects-swiper-section** /////////
-    var screen = new Swiper(".projects .swiper-container", {
+    var projectSwiper = new Swiper(".projects-section .swiper", {
         loop: true,
+        a11y: {
+          enabled: false,
+        },
         autoplay: true,
+        breakpoints: {
+          0: {
+            slidesPerView: 1,
+            spaceBetween: 15,
+          },
+          767: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+          992: {
+            slidesPerView: 2,
+            spaceBetween: 14,
+          },
+          1199: {
+            slidesPerView: 2,
+            spaceBetween: 28,
+          },
+        },
         pagination: {
-            el: ".projects .swiper-pagination",
-            clickable: true,
+          el: ".projects-slider .swiper-pagination",
+          clickable: true,
         },
         navigation: {
-            nextEl: ".projects .swiper-btn-next",
-            prevEl: ".projects .swiper-btn-prev",
+          nextEl: ".projects-section .swiper-btn-next",
+          prevEl: ".projects-section .swiper-btn-prev",
         },
-        breakpoints: {
-            0: {
-                slidesPerView: 1,
-                spaceBetween: 15,
-            },
-            767: {
-                slidesPerView: 2,
-                spaceBetween: 15,
-            },
-  
-            992: {
-                slidesPerView: 3,
-                spaceBetween: 30,
-            },
-            1199: {
-                slidesPerView: 3,
-                spaceBetween: 30,
-            },
+        on: {
+          init: function (swiper) {
+            lazyLoad();
+          },
         },
-    });
-
+      });
     
     ///////// **C-swiper-section** /////////
     var screen = new Swiper(".clients .swiper-container", {

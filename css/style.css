@@ -754,15 +754,41 @@ margin: 0;
 .projects-section{
   padding: 98px 0 90px;
   background-color: var(--main-color);
-  display: flex;
-  align-items: center;
- justify-content: space-between;
- position: relative;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
 }
-
+.project-item{
+  opacity: 0.2;
+}
+.project-img-block{
+  position: relative;
+  width: 300px;
+}
+.swiper-slide-active .project-item, .swiper-slide-next .project-item {
+  opacity: 1;
+}
 .projects-text{
-  padding-inline-start: calc((100vw - 1140px) / 2);
-  max-width: 555px;
+  position: relative;
+  z-index: 4;
+}
+.projects-slider{
+  padding-inline-start: 42px;
+    padding-inline-end: 58px;
+    position: relative;
+}
+.projects-slider .swiper {
+  overflow: unset;
+}
+.projects-slider:after{
+  content: "";
+  position: absolute;
+  top: 0;
+  inset-inline-end: calc(100% - 42px);
+  bottom: 0;
+  background-color: var(--main-color);
+  width: 100vw;
+  z-index: 2;
 }
 .extra-container{
 
@@ -796,12 +822,12 @@ margin: 0;
   position: relative;
 }
 .projects-slider .swiper-btn.swiper-btn-next {
-  left: 20px;
+  left: -108px;
   z-index: 9;
 }
 
 .projects-slider .swiper-btn.swiper-btn-prev {
-  right: -63px;
+  right: -20px;
   z-index: 9;
 }
 html[dir="ltr"] .projects-slider .swiper-btn.swiper-btn-prev{
@@ -1287,12 +1313,22 @@ html[dir="rtl"] .footer-accordion.active:after {
   .projects-title{
     font-size: 22px;
   }
+  
 }
 @media (min-width: 992px) and (max-width: 1199px) {
   .nav-header .img-logo img {
     max-width: 190px;
   }
-
+  .projects-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  .projects-title{
+    max-width: 100%;
+  }
   
 
   
