@@ -179,7 +179,7 @@ $(window).scroll(function() {
         a11y: {
           enabled: false,
         },
-        autoplay: true,
+        autoplay: false,
         breakpoints: {
           0: {
             slidesPerView: 1,
@@ -190,7 +190,7 @@ $(window).scroll(function() {
             spaceBetween: 30,
           },
           992: {
-            slidesPerView: 2,
+            slidesPerView: 3,
             spaceBetween: 14,
           },
           1199: {

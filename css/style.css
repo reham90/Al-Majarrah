@@ -777,6 +777,10 @@ margin: 0;
     padding-inline-end: 58px;
     position: relative;
 }
+html[dir="ltr"] .projects-slider{
+  padding-inline-start: 58px;
+    padding-inline-end: 42px;
+}
 .projects-slider .swiper {
   overflow: unset;
 }
@@ -784,7 +788,7 @@ margin: 0;
   content: "";
   position: absolute;
   top: 0;
-  inset-inline-end: calc(100% - 42px);
+  inset-inline-end: calc(100% - 58px);
   bottom: 0;
   background-color: var(--main-color);
   width: 100vw;
@@ -831,7 +835,10 @@ margin: 0;
   z-index: 9;
 }
 html[dir="ltr"] .projects-slider .swiper-btn.swiper-btn-prev{
-  right: 16px;
+  right: -130px;
+}
+html[dir="ltr"] .services-slider .swiper-btn.swiper-btn-next {
+  left: -5px;
 }
 .project-cover{
   position: absolute;
@@ -1307,18 +1314,28 @@ html[dir="rtl"] .footer-accordion.active:after {
   }
 }
 @media (min-width: 992px) and (max-width: 1024px) {
-  .extra-container{
-    max-width: 670px !important;
-  }
+ 
   .projects-title{
     font-size: 22px;
   }
+  .project-img-block{
+    width: 265px;
+  }
+  .swiper-slide-next .project-item{
+    opacity: 1;
+      }
   
 }
 @media (min-width: 992px) and (max-width: 1199px) {
   .nav-header .img-logo img {
     max-width: 190px;
   }
+  .project-img-block{
+    width: 265px;
+  }
+  .swiper-slide-next .project-item{
+    opacity: 1;
+      }
   .projects-text{
     display: flex;
     flex-direction: column;
@@ -1344,6 +1361,12 @@ html[dir="rtl"] .footer-accordion.active:after {
 @media (max-width: 991px) {
   body {
     position: relative;
+  }
+  .project-img-block{
+    width: 235px;
+  }
+  .swiper-slide-next .project-item{
+opacity: 0.2;
   }
   .services-section{
     padding: 0 0 50px;
@@ -1612,22 +1635,34 @@ html[dir="rtl"] .footer-accordion.active:after {
     visibility: visible;
     z-index: 99;
   }
-  /* .extra-container{
-    max-width: 670px !important;
-  } */
+  .services-slider .swiper-btn.swiper-btn-next{
+    left: -80px;
+  }
+  .services-slider .swiper-btn.swiper-btn-prev{
+    right: -80px;
+  }
 }
-
+@media only screen and (max-width: 767px) and (min-width: 540px) {
+  .project-img-block{
+    width: 390px;
+  }
+}
 @media only screen and (max-width: 994px) and (min-width: 768px) {
   .mobile-css{
     position: relative;
   }
+  .swiper-slide-next .project-item{
+    opacity: 1;
+      }
   .about-us-section{
     flex-wrap: nowrap;
   }
   .about-us-section img{
     width: 50%;
   }
- 
+  .project-img-block{
+    width: 290px;
+  }
 
   .nav-foot-link {
     font-size: 13px;
