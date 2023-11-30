@@ -1400,6 +1400,9 @@ html[dir="rtl"] .footer-accordion.active:after {
     width: 65px;
     height: 65px;
   }
+  .projects-slider .swiper-wrapper{
+    z-index: 9;
+  }
   .client-img-block img{
     filter: grayscale(0);
     opacity: 1;
